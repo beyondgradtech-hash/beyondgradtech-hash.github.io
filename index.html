@@ -4,299 +4,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Likhith D C — ECE graduate focused on embedded systems, EV technology, robotics and software.">
 <title>Likhith D C | Engineer Portfolio</title>
 <style>
-:root {
-  --bg:#080b14; --panel:#101625; --text:#edf3ff;
-  --muted:#a5b2c9; --blue:#61d5ff; --purple:#a78bfa;
-  --border:rgba(148,163,184,.2);
-}
-* { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; scroll-padding-top:85px; }
-body {
-  font-family:Inter,Segoe UI,Arial,sans-serif;
-  background:var(--bg); color:var(--text); line-height:1.7;
-  overflow-x:hidden;
-}
-a { color:inherit; text-decoration:none; }
-.wrap { width:min(1080px,90%); margin:auto; }
-nav {
-  position:sticky; top:0; z-index:10;
-  background:rgba(8,11,20,.88); backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-}
-.navinner {
-  min-height:70px; display:flex; align-items:center;
-  justify-content:space-between; gap:20px; flex-wrap:wrap;
-}
-.logo { font-weight:800; font-size:21px; letter-spacing:-.5px; }
-.logo span,.accent { color:var(--blue); }
-.links { display:flex; gap:22px; flex-wrap:wrap; font-size:14px; }
-.links a { color:var(--muted); transition:color .2s; }
-.links a:hover { color:var(--blue); }
-.hero {
-  min-height:78vh; display:flex; align-items:center;
-  position:relative; isolation:isolate; padding:90px 0;
-}
-.hero:before {
-  content:""; position:absolute; z-index:-1; width:420px; height:420px;
-  left:25%; top:5%; border-radius:50%;
-  background:rgba(61,130,255,.13); filter:blur(90px);
-  animation:float 8s ease-in-out infinite alternate;
-}
-.eyebrow {
-  color:var(--blue); font-size:12px; font-weight:800;
-  letter-spacing:3px; text-transform:uppercase;
-}
-h1 { font-size:clamp(42px,7vw,76px); line-height:1.12; margin:18px 0; letter-spacing:-2px; }
-.gradient {
-  background:linear-gradient(100deg,var(--blue),var(--purple));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.lead { max-width:700px; color:var(--muted); font-size:18px; }
-.actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
-.btn {
-  display:inline-block; padding:12px 19px; border-radius:10px;
-  border:1px solid var(--border); font-weight:700; font-size:14px;
-  transition:transform .2s,border-color .2s,background .2s;
-}
-.btn:hover { transform:translateY(-3px); border-color:var(--blue); }
-.primary { background:var(--blue); color:#07101a; border-color:var(--blue); }
-section { padding:76px 0; }
-.sectionhead { margin-bottom:28px; }
-h2 { font-size:clamp(28px,4vw,38px); letter-spacing:-1px; }
-.sub { color:var(--muted); margin-top:5px; }
-.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-.card {
-  background:linear-gradient(145deg,rgba(20,29,48,.96),rgba(12,17,29,.96));
-  border:1px solid var(--border); padding:24px; border-radius:16px;
-  transition:transform .25s,border-color .25s,box-shadow .25s;
-}
-.card:hover { transform:translateY(-6px); border-color:rgba(97,213,255,.65); box-shadow:0 12px 35px rgba(0,0,0,.22); }
-.icon { font-size:25px; margin-bottom:12px; }
-h3 { font-size:19px; margin-bottom:9px; }
-.card p,.muted { color:var(--muted); font-size:14px; }
-.tags { display:flex; gap:7px; flex-wrap:wrap; margin-top:17px; }
-.tags span {
-  font-size:11px; color:var(--blue); background:rgba(97,213,255,.08);
-  border:1px solid rgba(97,213,255,.15); padding:4px 8px; border-radius:20px;
-}
-.skillgrid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
-.skill {
-  padding:15px; border:1px solid var(--border); border-radius:12px;
-  background:var(--panel); color:#dce8fa; font-size:14px;
-}
-.timeline { display:grid; gap:15px; }
-.timeline .card { border-left:3px solid var(--blue); }
-.contactbox {
-  border:1px solid var(--border); border-radius:20px; padding:34px;
-  background:radial-gradient(ellipse at top right,rgba(167,139,250,.12),transparent 55%),var(--panel);
-}
-footer { border-top:1px solid var(--border); padding:25px 0; color:var(--muted); font-size:13px; }
-.reveal { opacity:0; transform:translateY(20px); transition:opacity .7s,transform .7s; }
-.reveal.show { opacity:1; transform:translateY(0); }
-@keyframes float { from { transform:translate(-20px,0); } to { transform:translate(35px,35px); } }
-@media (prefers-reduced-motion:reduce) {
-  *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; }
-  .reveal { opacity:1; transform:none; }
-}
-@media(max-width:760px) {
-  .grid { grid-template-columns:1fr; }
-  .skillgrid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .hero { min-height:auto; padding:85px 0; }
-  .links { gap:12px; }
-  .navinner { padding:13px 0; }
-  .contactbox { padding:23px; }
-}
+:root{--bg:#080b14;--panel:#111827;--text:#edf3ff;--muted:#a5b2c9;--blue:#61d5ff;--purple:#a78bfa;--border:#283449}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,90%);margin:auto}
+nav{position:sticky;top:0;z-index:5;background:rgba(8,11,20,.94);border-bottom:1px solid var(--border)}
+.navinner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.logo{font-weight:bold;font-size:22px}.logo span{color:var(--blue)}
+.links{display:flex;gap:17px;flex-wrap:wrap;font-size:14px}
+.links a{color:var(--muted)}.links a:hover{color:var(--blue)}
+section{padding:72px 0;scroll-margin-top:75px}
+.hero{min-height:76vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:350px;height:350px;border-radius:50%;background:#163d76;filter:blur(100px);opacity:.5;animation:glow 7s ease-in-out infinite alternate}
+.hero .wrap{position:relative}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.15;margin:20px 0;letter-spacing:-1.5px}
+.gradient{background:linear-gradient(90deg,var(--blue),var(--purple));background-clip:text;-webkit-background-clip:text;color:transparent}
+.lead{max-width:720px;color:var(--muted);font-size:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--border);border-radius:10px;font-weight:bold;font-size:14px;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-3px);border-color:var(--blue)}
+.primary{background:var(--blue);color:#07101a;border-color:var(--blue)}
+h2{font-size:clamp(28px,4vw,38px);margin:8px 0 18px}
+.sub,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{padding:23px;border:1px solid var(--border);border-radius:15px;background:var(--panel);transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--blue)}
+.card h3{margin-bottom:10px}.card p{color:var(--muted);font-size:14px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+.tags span{font-size:11px;padding:4px 9px;border-radius:20px;background:#172b42;color:var(--blue)}
+.skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.skill{padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+.contactbox{padding:30px;border:1px solid var(--border);border-radius:18px;background:linear-gradient(130deg,#111827,#101a30)}
+footer{padding:25px 0;border-top:1px solid var(--border);color:var(--muted);font-size:13px}
+.reveal{animation:appear .8s ease both}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{from{transform:translate(-20px,0)}to{transform:translate(80px,35px)}}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,minmax(0,1fr))}.navinner{padding:12px 0}.links{gap:10px}.hero{min-height:65vh}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-
 <nav>
-  <div class="wrap navinner">
-    <a class="logo" href="#home">Likhith<span>.dev</span></a>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<div class="wrap navinner">
+<a class="logo" href="#home">Likhith<span>.dev</span></a>
+<div class="links">
+<a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+</div>
+</div>
 </nav>
 
-<main>
 <section class="hero" id="home">
-  <div class="wrap">
-    <p class="eyebrow">ECE Graduate · Aspiring Engineer</p>
-    <h1>Building my path in<br><span class="gradient">Embedded & EV Tech.</span></h1>
-    <p class="lead">
-      Hi, I'm Likhith D C, an Electronics and Communication Engineering
-      graduate interested in embedded systems, electric vehicles, robotics
-      and programming. I enjoy learning how hardware and software work together.
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="#projects">Explore Projects ↘</a>
-      <a class="btn" href="#contact">Let's Connect</a>
-    </div>
-  </div>
+<div class="wrap reveal">
+<p class="eyebrow">ECE Graduate · Aspiring Engineer</p>
+<h1>Building my path in<br><span class="gradient">Embedded & EV Tech.</span></h1>
+<p class="lead">Hi, I'm Likhith D C, an Electronics and Communication Engineering graduate interested in embedded systems, electric vehicles, robotics and programming. I enjoy learning how hardware and software work together.</p>
+<div class="actions">
+<a class="btn primary" href="#projects">Explore Projects ↘</a>
+<a class="btn" href="#contact">Let's Connect</a>
+</div>
+</div>
 </section>
 
 <section id="about">
-  <div class="wrap reveal">
-    <div class="sectionhead">
-      <p class="eyebrow">A little about me</p>
-      <h2>Curious about how things work.</h2>
-    </div>
-    <p class="lead">
-      I completed my B.E. in Electronics and Communication Engineering
-      at G Madegowda Institute of Technology under VTU. I'm developing
-      my technical foundation through hands-on project work, EV component
-      exposure and embedded C programming practice.
-    </p>
-  </div>
+<div class="wrap reveal">
+<p class="eyebrow">About me</p>
+<h2>Curious about how things work.</h2>
+<p class="lead">I completed my B.E. in Electronics and Communication Engineering at G Madegowda Institute of Technology under VTU. I'm developing my technical foundation through project work, EV component exposure and embedded C programming practice.</p>
+</div>
 </section>
 
 <section id="skills">
-  <div class="wrap reveal">
-    <div class="sectionhead">
-      <p class="eyebrow">My toolkit</p>
-      <h2>Technical Skills</h2>
-      <p class="sub">Technologies I've studied or worked with.</p>
-    </div>
-    <div class="skillgrid">
-      <div class="skill">C Programming</div>
-      <div class="skill">Python Basics</div>
-      <div class="skill">Linux / Ubuntu</div>
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">Embedded Systems</div>
-      <div class="skill">EV Systems & BMS</div>
-      <div class="skill">Raspberry Pi</div>
-      <div class="skill">HTML & CSS</div>
-      <div class="skill">SQL Basics</div>
-      <div class="skill">TensorFlow / Keras</div>
-      <div class="skill">OpenCV</div>
-      <div class="skill">Problem Solving</div>
-    </div>
-  </div>
+<div class="wrap reveal">
+<p class="eyebrow">My toolkit</p><h2>Technical Skills</h2>
+<div class="skills">
+<div class="skill">C Programming</div><div class="skill">Python Basics</div>
+<div class="skill">Linux / Ubuntu</div><div class="skill">Git & GitHub</div>
+<div class="skill">Embedded Systems</div><div class="skill">EV Systems & BMS</div>
+<div class="skill">Raspberry Pi</div><div class="skill">HTML & CSS</div>
+<div class="skill">SQL Basics</div><div class="skill">TensorFlow / Keras</div>
+<div class="skill">OpenCV</div><div class="skill">Problem Solving</div>
+</div>
+</div>
 </section>
 
 <section id="projects">
-  <div class="wrap reveal">
-    <div class="sectionhead">
-      <p class="eyebrow">Things I've worked on</p>
-      <h2>Featured Projects</h2>
-      <p class="sub">Explore my engineering and programming journey.</p>
-    </div>
-    <div class="grid">
-      <article class="card">
-        <div class="icon">♻️</div>
-        <h3>Smart Waste Segregation Robot</h3>
-        <p>
-          Final-year project combining image classification with a robotic
-          arm to explore automated segregation of plastic, paper and organic waste.
-        </p>
-        <div class="tags"><span>Python</span><span>CNN</span><span>OpenCV</span><span>Raspberry Pi</span></div>
-      </article>
-      <article class="card">
-        <div class="icon">⚡</div>
-        <h3>EV Component Testing & Study</h3>
-        <p>
-          Internship exposure to EV components, including BMS, motor controllers,
-          battery systems and related components, with practical testing and
-          technical observations.
-        </p>
-        <div class="tags"><span>EV Technology</span><span>BMS</span><span>Testing</span></div>
-      </article>
-      <article class="card">
-        <div class="icon">⌨️</div>
-        <h3>C Address Book</h3>
-        <p>
-          C programming project in progress, focused on contact management,
-          input validation, functions and string handling.
-        </p>
-        <div class="tags"><span>C</span><span>Functions</span><span>Strings</span><span>Validation</span></div>
-      </article>
-    </div>
-    <div class="actions">
-      <a class="btn" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener">Visit my GitHub ↗</a>
-    </div>
-  </div>
+<div class="wrap reveal">
+<p class="eyebrow">Things I've worked on</p><h2>Featured Projects</h2>
+<div class="grid">
+<article class="card"><h3>♻️ Smart Waste Segregation Robot</h3><p>Final-year project exploring automated segregation of plastic, paper and organic waste using image classification and a robotic arm.</p><div class="tags"><span>Python</span><span>CNN</span><span>OpenCV</span><span>Raspberry Pi</span></div></article>
+<article class="card"><h3>⚡ EV Component Testing & Study</h3><p>Internship exposure to BMS, motor controllers, battery systems and other EV components through practical testing and technical observations.</p><div class="tags"><span>EV Technology</span><span>BMS</span><span>Testing</span></div></article>
+<article class="card"><h3>⌨️ C Address Book</h3><p>C programming project in progress, focused on contact management, input validation, functions and string handling.</p><div class="tags"><span>C</span><span>Functions</span><span>Strings</span></div></article>
+</div>
+<div class="actions"><a class="btn" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a></div>
+</div>
 </section>
 
 <section id="experience">
-  <div class="wrap reveal">
-    <div class="sectionhead">
-      <p class="eyebrow">My journey</p>
-      <h2>Education & Experience</h2>
-    </div>
-    <div class="timeline">
-      <article class="card">
-        <h3>EV Technology Internship</h3>
-        <p><strong>VisionAstra EV Academy</strong></p>
-        <p style="margin-top:8px">
-          Learned about EV architecture, BMS fundamentals, cell balancing,
-          motor controllers and other EV components through practical exposure.
-        </p>
-      </article>
-      <article class="card">
-        <h3>Embedded Systems Training</h3>
-        <p><strong>Emertxe</strong></p>
-        <p style="margin-top:8px">
-          Developing C programming fundamentals, including pointers, arrays,
-          functions, strings, Linux commands and problem solving.
-        </p>
-      </article>
-      <article class="card">
-        <h3>B.E. Electronics & Communication Engineering</h3>
-        <p><strong>G Madegowda Institute of Technology · VTU</strong></p>
-        <p style="margin-top:8px">Bachelor of Engineering graduate.</p>
-      </article>
-    </div>
-  </div>
+<div class="wrap reveal">
+<p class="eyebrow">My journey</p><h2>Education & Experience</h2>
+<div class="grid">
+<article class="card"><h3>EV Technology Internship</h3><p><strong>VisionAstra EV Academy</strong></p><p>Exposure to EV architecture, BMS fundamentals, cell balancing, motor controllers and EV components.</p></article>
+<article class="card"><h3>Embedded Systems Training</h3><p><strong>Emertxe</strong></p><p>Learning C programming, pointers, arrays, functions, strings, Linux commands and problem solving.</p></article>
+<article class="card"><h3>B.E. Electronics & Communication</h3><p><strong>G Madegowda Institute of Technology · VTU</strong></p><p>Bachelor of Engineering graduate.</p></article>
+</div>
+</div>
 </section>
 
 <section id="contact">
-  <div class="wrap reveal">
-    <div class="contactbox">
-      <p class="eyebrow">Have an opportunity?</p>
-      <h2>Let's build something meaningful.</h2>
-      <p class="sub">I'm interested in opportunities related to embedded systems, EV technology and electronics engineering.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener">GitHub Profile ↗</a>
-        <!-- Replace the # below with your real LinkedIn profile URL -->
-        <a class="btn" href="https://www.linkedin.com/in/likilikhithdc/" target="_blank" rel="noopener">LinkedIn Profile ↗</a>
-        <!-- Upload your resume to this repository as resume.pdf to activate this link -->
-        <a class="btn" href="resume.pdf" id="resume-link">Download Resume ↓</a>
-      </div>
-      <p class="muted" style="margin-top:17px">
-        Add your real LinkedIn profile and upload your resume PDF before sharing this website with recruiters.
-      </p>
-    </div>
-  </div>
+<div class="wrap reveal">
+<div class="contactbox">
+<p class="eyebrow">Have an opportunity?</p>
+<h2>Let's build something meaningful.</h2>
+<p class="sub">I'm interested in embedded systems, EV technology and electronics engineering opportunities.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+<a class="btn" href="https://www.linkedin.com/in/likilikhithdc/" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+<a class="btn" href="resume.pdf" target="_blank" rel="noopener noreferrer">Download Resume ↓</a>
+</div>
+<p class="muted" style="margin-top:16px">Upload your resume as resume.pdf to this repository for the download link to work.</p>
+</div>
+</div>
 </section>
-</main>
 
-<footer>
-  <div class="wrap">© 2026 Likhith D C · Personal Engineering Portfolio</div>
-</footer>
-
-<script>
-const items = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  items.forEach(item => observer.observe(item));
-} else {
-  items.forEach(item => item.classList.add("show"));
-}
-</script>
+<footer><div class="wrap">© 2026 Likhith D C · Personal Engineering Portfolio</div></footer>
 </body>
 </html>
