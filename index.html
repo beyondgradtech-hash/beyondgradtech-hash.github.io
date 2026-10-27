@@ -2,193 +2,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Likhith D C | Engineer Portfolio</title>
-  <meta name="description" content="Portfolio of an ECE graduate interested in embedded systems, EV technology, and robotics.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b1120;
-      color: #e5e7eb;
-      line-height: 1.7;
-    }
-    header {
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      background: #111827;
-      position: sticky;
-      top: 0;
-    }
-    .logo { color: #38bdf8; font-size: 22px; font-weight: bold; }
-    nav { display: flex; flex-wrap: wrap; gap: 16px; }
-    nav a { color: #e5e7eb; text-decoration: none; }
-    nav a:hover { color: #38bdf8; }
-    section { padding: 65px 8%; }
-    .hero { min-height: 75vh; display: flex; flex-direction: column; justify-content: center; }
-    .tag { color: #38bdf8; font-weight: bold; letter-spacing: 2px; }
-    h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.2; margin: 16px 0; }
-    h2 { color: #38bdf8; font-size: 30px; margin-bottom: 20px; }
-    .intro { max-width: 680px; color: #cbd5e1; font-size: 18px; }
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
-    .btn { display: inline-block; padding: 11px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
-    .primary { background: #38bdf8; color: #0b1120; }
-    .secondary { border: 1px solid #38bdf8; color: #38bdf8; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
-    .card { background: #111c30; border: 1px solid #26364d; border-radius: 12px; padding: 23px; }
-    .card h3 { color: #f8fafc; margin-bottom: 10px; }
-    .card p, .muted { color: #cbd5e1; }
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skills span { background: #172b42; color: #7dd3fc; padding: 8px 13px; border-radius: 20px; }
-    .contact a { color: #7dd3fc; overflow-wrap: anywhere; }
-    footer { text-align: center; padding: 25px; color: #94a3b8; background: #111827; }
-    @media (max-width: 600px) {
-      header { padding: 15px 5%; }
-      section { padding: 48px 6%; }
-      nav { gap: 10px; font-size: 14px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Likhith D C — ECE graduate focused on embedded systems, EV technology, robotics and software.">
+<title>Likhith D C | Engineer Portfolio</title>
+<style>
+:root {
+  --bg:#080b14; --panel:#101625; --text:#edf3ff;
+  --muted:#a5b2c9; --blue:#61d5ff; --purple:#a78bfa;
+  --border:rgba(148,163,184,.2);
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:85px; }
+body {
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.7;
+  overflow-x:hidden;
+}
+a { color:inherit; text-decoration:none; }
+.wrap { width:min(1080px,90%); margin:auto; }
+nav {
+  position:sticky; top:0; z-index:10;
+  background:rgba(8,11,20,.88); backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.navinner {
+  min-height:70px; display:flex; align-items:center;
+  justify-content:space-between; gap:20px; flex-wrap:wrap;
+}
+.logo { font-weight:800; font-size:21px; letter-spacing:-.5px; }
+.logo span,.accent { color:var(--blue); }
+.links { display:flex; gap:22px; flex-wrap:wrap; font-size:14px; }
+.links a { color:var(--muted); transition:color .2s; }
+.links a:hover { color:var(--blue); }
+.hero {
+  min-height:78vh; display:flex; align-items:center;
+  position:relative; isolation:isolate; padding:90px 0;
+}
+.hero:before {
+  content:""; position:absolute; z-index:-1; width:420px; height:420px;
+  left:25%; top:5%; border-radius:50%;
+  background:rgba(61,130,255,.13); filter:blur(90px);
+  animation:float 8s ease-in-out infinite alternate;
+}
+.eyebrow {
+  color:var(--blue); font-size:12px; font-weight:800;
+  letter-spacing:3px; text-transform:uppercase;
+}
+h1 { font-size:clamp(42px,7vw,76px); line-height:1.12; margin:18px 0; letter-spacing:-2px; }
+.gradient {
+  background:linear-gradient(100deg,var(--blue),var(--purple));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.lead { max-width:700px; color:var(--muted); font-size:18px; }
+.actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+.btn {
+  display:inline-block; padding:12px 19px; border-radius:10px;
+  border:1px solid var(--border); font-weight:700; font-size:14px;
+  transition:transform .2s,border-color .2s,background .2s;
+}
+.btn:hover { transform:translateY(-3px); border-color:var(--blue); }
+.primary { background:var(--blue); color:#07101a; border-color:var(--blue); }
+section { padding:76px 0; }
+.sectionhead { margin-bottom:28px; }
+h2 { font-size:clamp(28px,4vw,38px); letter-spacing:-1px; }
+.sub { color:var(--muted); margin-top:5px; }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.card {
+  background:linear-gradient(145deg,rgba(20,29,48,.96),rgba(12,17,29,.96));
+  border:1px solid var(--border); padding:24px; border-radius:16px;
+  transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.card:hover { transform:translateY(-6px); border-color:rgba(97,213,255,.65); box-shadow:0 12px 35px rgba(0,0,0,.22); }
+.icon { font-size:25px; margin-bottom:12px; }
+h3 { font-size:19px; margin-bottom:9px; }
+.card p,.muted { color:var(--muted); font-size:14px; }
+.tags { display:flex; gap:7px; flex-wrap:wrap; margin-top:17px; }
+.tags span {
+  font-size:11px; color:var(--blue); background:rgba(97,213,255,.08);
+  border:1px solid rgba(97,213,255,.15); padding:4px 8px; border-radius:20px;
+}
+.skillgrid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+.skill {
+  padding:15px; border:1px solid var(--border); border-radius:12px;
+  background:var(--panel); color:#dce8fa; font-size:14px;
+}
+.timeline { display:grid; gap:15px; }
+.timeline .card { border-left:3px solid var(--blue); }
+.contactbox {
+  border:1px solid var(--border); border-radius:20px; padding:34px;
+  background:radial-gradient(ellipse at top right,rgba(167,139,250,.12),transparent 55%),var(--panel);
+}
+footer { border-top:1px solid var(--border); padding:25px 0; color:var(--muted); font-size:13px; }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .7s,transform .7s; }
+.reveal.show { opacity:1; transform:translateY(0); }
+@keyframes float { from { transform:translate(-20px,0); } to { transform:translate(35px,35px); } }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; }
+  .reveal { opacity:1; transform:none; }
+}
+@media(max-width:760px) {
+  .grid { grid-template-columns:1fr; }
+  .skillgrid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .hero { min-height:auto; padding:85px 0; }
+  .links { gap:12px; }
+  .navinner { padding:13px 0; }
+  .contactbox { padding:23px; }
+}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">Likhith.dev</div>
-    <nav>
+
+<nav>
+  <div class="wrap navinner">
+    <a class="logo" href="#home">Likhith<span>.dev</span></a>
+    <div class="links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <section class="hero" id="about">
-    <p class="tag">ECE GRADUATE | ASPIRING ENGINEER</p>
-    <h1>Hi, I'm <span style="color:#38bdf8">Likhith D C</span></h1>
-    <p class="intro">
-      An Electronics and Communication Engineering graduate passionate
-      about Embedded Systems, Electric Vehicles, Robotics and C programming.
-      I enjoy learning how hardware and software work together to solve
-      real-world engineering problems.
-    </p>
-    <div class="buttons">
-      <a class="btn primary" href="#projects">Explore My Projects</a>
-      <a class="btn secondary" href="#contact">Contact Me</a>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills">
-      <span>C Programming</span>
-      <span>Python Basics</span>
-      <span>Linux / Ubuntu</span>
-      <span>Embedded Systems</span>
-      <span>EV Technology</span>
-      <span>Battery Management Systems</span>
-      <span>Motor Controllers</span>
-      <span>Raspberry Pi</span>
-      <span>Git & GitHub</span>
-      <span>HTML & CSS</span>
-      <span>SQL Basics</span>
-    </div>
-    <p class="muted" style="margin-top:15px">
-      Skills listed reflect my learning and project exposure.
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <p class="eyebrow">ECE Graduate · Aspiring Engineer</p>
+    <h1>Building my path in<br><span class="gradient">Embedded & EV Tech.</span></h1>
+    <p class="lead">
+      Hi, I'm Likhith D C, an Electronics and Communication Engineering
+      graduate interested in embedded systems, electric vehicles, robotics
+      and programming. I enjoy learning how hardware and software work together.
     </p>
-  </section>
+    <div class="actions">
+      <a class="btn primary" href="#projects">Explore Projects ↘</a>
+      <a class="btn" href="#contact">Let's Connect</a>
+    </div>
+  </div>
+</section>
 
-  <section id="projects">
-    <h2>Featured Projects</h2>
+<section id="about">
+  <div class="wrap reveal">
+    <div class="sectionhead">
+      <p class="eyebrow">A little about me</p>
+      <h2>Curious about how things work.</h2>
+    </div>
+    <p class="lead">
+      I completed my B.E. in Electronics and Communication Engineering
+      at G Madegowda Institute of Technology under VTU. I'm developing
+      my technical foundation through hands-on project work, EV component
+      exposure and embedded C programming practice.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap reveal">
+    <div class="sectionhead">
+      <p class="eyebrow">My toolkit</p>
+      <h2>Technical Skills</h2>
+      <p class="sub">Technologies I've studied or worked with.</p>
+    </div>
+    <div class="skillgrid">
+      <div class="skill">C Programming</div>
+      <div class="skill">Python Basics</div>
+      <div class="skill">Linux / Ubuntu</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Embedded Systems</div>
+      <div class="skill">EV Systems & BMS</div>
+      <div class="skill">Raspberry Pi</div>
+      <div class="skill">HTML & CSS</div>
+      <div class="skill">SQL Basics</div>
+      <div class="skill">TensorFlow / Keras</div>
+      <div class="skill">OpenCV</div>
+      <div class="skill">Problem Solving</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap reveal">
+    <div class="sectionhead">
+      <p class="eyebrow">Things I've worked on</p>
+      <h2>Featured Projects</h2>
+      <p class="sub">Explore my engineering and programming journey.</p>
+    </div>
     <div class="grid">
       <article class="card">
+        <div class="icon">♻️</div>
         <h3>Smart Waste Segregation Robot</h3>
         <p>
-          Final-year project exploring waste classification using a
-          Convolutional Neural Network (CNN) and a robotic arm.
+          Final-year project combining image classification with a robotic
+          arm to explore automated segregation of plastic, paper and organic waste.
         </p>
-        <p class="muted" style="margin-top:12px">
-          Technologies: Python, TensorFlow/Keras, OpenCV, Raspberry Pi.
-        </p>
+        <div class="tags"><span>Python</span><span>CNN</span><span>OpenCV</span><span>Raspberry Pi</span></div>
       </article>
       <article class="card">
-        <h3>EV Component Study & Testing</h3>
+        <div class="icon">⚡</div>
+        <h3>EV Component Testing & Study</h3>
         <p>
-          Practical internship exposure to EV components, including the
-          Battery Management System (BMS), motor controller and related
-          electric vehicle systems.
+          Internship exposure to EV components, including BMS, motor controllers,
+          battery systems and related components, with practical testing and
+          technical observations.
         </p>
-        <p class="muted" style="margin-top:12px">
-          Focus: component understanding, testing and technical observations.
-        </p>
+        <div class="tags"><span>EV Technology</span><span>BMS</span><span>Testing</span></div>
       </article>
       <article class="card">
-        <h3>C Programming Practice</h3>
+        <div class="icon">⌨️</div>
+        <h3>C Address Book</h3>
         <p>
-          Learning C through programming exercises involving loops,
-          arrays, functions, pointers, strings and problem-solving.
+          C programming project in progress, focused on contact management,
+          input validation, functions and string handling.
         </p>
-        <p class="muted" style="margin-top:12px">
-          Add links to completed programs and your Address Book project here.
-        </p>
+        <div class="tags"><span>C</span><span>Functions</span><span>Strings</span><span>Validation</span></div>
       </article>
     </div>
-  </section>
+    <div class="actions">
+      <a class="btn" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener">Visit my GitHub ↗</a>
+    </div>
+  </div>
+</section>
 
-  <section id="experience">
-    <h2>Education & Experience</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>B.E. – Electronics & Communication Engineering</h3>
-        <p>G Madegowda Institute of Technology</p>
-        <p class="muted">Visvesvaraya Technological University (VTU)</p>
-      </article>
+<section id="experience">
+  <div class="wrap reveal">
+    <div class="sectionhead">
+      <p class="eyebrow">My journey</p>
+      <h2>Education & Experience</h2>
+    </div>
+    <div class="timeline">
       <article class="card">
         <h3>EV Technology Internship</h3>
-        <p>VisionAstra EV Academy</p>
-        <p class="muted">
-          Exposure to EV systems, BMS fundamentals, cell balancing,
-          motor controllers and EV component testing.
+        <p><strong>VisionAstra EV Academy</strong></p>
+        <p style="margin-top:8px">
+          Learned about EV architecture, BMS fundamentals, cell balancing,
+          motor controllers and other EV components through practical exposure.
         </p>
       </article>
       <article class="card">
         <h3>Embedded Systems Training</h3>
-        <p>Emertxe</p>
-        <p class="muted">
-          Learning C programming, Linux commands, pointers, arrays,
-          functions and embedded systems fundamentals.
+        <p><strong>Emertxe</strong></p>
+        <p style="margin-top:8px">
+          Developing C programming fundamentals, including pointers, arrays,
+          functions, strings, Linux commands and problem solving.
         </p>
       </article>
+      <article class="card">
+        <h3>B.E. Electronics & Communication Engineering</h3>
+        <p><strong>G Madegowda Institute of Technology · VTU</strong></p>
+        <p style="margin-top:8px">Bachelor of Engineering graduate.</p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="contact">
-    <h2>Let's Connect</h2>
-    <p class="muted">
-      I'm interested in opportunities in embedded systems, EV technology
-      and electronics engineering.
-    </p>
-    <div class="buttons">
-      <a class="btn primary"
-         href="https://github.com/beyondgradtech-hash"
-         target="_blank" rel="noopener">My GitHub</a>
-      <a class="btn secondary"
-         href="https://www.linkedin.com/"
-         target="_blank" rel="noopener">LinkedIn</a>
+<section id="contact">
+  <div class="wrap reveal">
+    <div class="contactbox">
+      <p class="eyebrow">Have an opportunity?</p>
+      <h2>Let's build something meaningful.</h2>
+      <p class="sub">I'm interested in opportunities related to embedded systems, EV technology and electronics engineering.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://github.com/beyondgradtech-hash" target="_blank" rel="noopener">GitHub Profile ↗</a>
+        <!-- Replace the # below with your real LinkedIn profile URL -->
+        <a class="btn" href="#" id="linkedin-link">LinkedIn URL to be added</a>
+        <!-- Upload your resume to this repository as resume.pdf to activate this link -->
+        <a class="btn" href="resume.pdf" id="resume-link">Download Resume ↓</a>
+      </div>
+      <p class="muted" style="margin-top:17px">
+        Add your real LinkedIn profile and upload your resume PDF before sharing this website with recruiters.
+      </p>
     </div>
-    <p class="muted" style="margin-top:20px">
-      Replace the LinkedIn link with your actual profile URL.
-      Add your professional email address when ready.
-    </p>
-  </section>
+  </div>
+</section>
+</main>
 
-  <footer>
-    <p>© 2026 Likhith D C | Personal Portfolio</p>
-    <p>Built with HTML and CSS</p>
-  </footer>
+<footer>
+  <div class="wrap">© 2026 Likhith D C · Personal Engineering Portfolio</div>
+</footer>
+
+<script>
+const items = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(item => observer.observe(item));
+} else {
+  items.forEach(item => item.classList.add("show"));
+}
+</script>
 </body>
 </html>
